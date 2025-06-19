@@ -20,7 +20,7 @@ const generateNicknameCombinations = (adjectives, nouns) => {
 }
 
 const removeUsedNicknames = (allNicknames, usedNicknames) => {
-    for (const item of usedNickNames) {
+    for (const item of usedNicknames) {
         allNicknames.delete(item);
     }
     return allNicknames;
