@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "target": "ES2024",                       // ES6 === ES2015 이상 되야 Set 메서드 사용가능
+    "module": "commonjs",
+    "lib": ["ES2024", "DOM"],
+    "strict": true,
+    "esModuleInterop": true,                  // import fs from 'fs' 같은 호환 허용
+    "skipLibCheck": true,                     // node_modules 내부 타입 검사 생략
+    "forceConsistentCasingInFileNames": true  // 대소문자 불일치 방지
+  }
+}
