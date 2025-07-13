@@ -152,8 +152,8 @@ function* gen(): Generator<number> {
     yield 300;
 }
 
-const generator = gen(); // Generator 객체 (이터러블이자 이터레이터)
-const generator2 = gen();
+const generator: Generator<number> = gen(); // Generator 객체 (이터러블이자 이터레이터)
+const generator2: Generator<number> = gen();
 
 for (const value of generator) {
     console.log(value);
