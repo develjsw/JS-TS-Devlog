@@ -1,6 +1,42 @@
 
 // 이터러블과 이터레이터 사용
 
+// Array, String, Map, Set은 이터러블이기 때문에 기본적으로 for...of 문을 사용할 수 있음
+// 다만, 직접 next() 메서드를 호출하여 하나씩 값을 꺼내려면 [Symbol.iterator]()를 사용해 이터레이터를 먼저 얻어야 함
+
+// 🔹공통🔹 for...of문 사용
+const defaultArr = [1, 2, 3];
+const defaultStr = 'hello';
+const defaultSet = new Set([10, 20, 30]);
+const defaultMap = new Map([['price', 15000], ['tax', 1500]]);
+
+for (const value of defaultArr) {
+    console.log(value);
+    // 출력: 1
+    // 출력: 2
+    // 출력: 3
+}
+for (const char of defaultStr) {
+    console.log(char);
+    // 출력: h
+    // 출력: e
+    // 출력: l
+    // 출력: l
+    // 출력: o
+}
+for (const value of defaultMap) {
+    console.log(value);
+    // 출력: [ 'price', 15000 ]
+    // 출력: [ 'tax', 1500 ]
+}
+for (const value of defaultSet) {
+    console.log(value);
+    // 출력: 10
+    // 출력: 20
+    // 출력: 30
+}
+
+
 // 🔹1. 배열(Array)의 이터레이터 사용
 const arr: number[] = [1, 2, 3];
 const arrayIterator1: ArrayIterator<number> = arr[Symbol.iterator]();
