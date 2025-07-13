@@ -4,6 +4,8 @@
 // Array, String, Map, Set은 이터러블이기 때문에 기본적으로 for...of 문을 사용할 수 있음
 // 다만, 직접 next() 메서드를 호출하여 하나씩 값을 꺼내려면 [Symbol.iterator]()를 사용해 이터레이터를 먼저 얻어야 함
 
+// Generator는 이터러블이자 이터레이터이므로 [Symbol.iterator]() 호출 없이도 next() 메서드를 바로 사용할 수 있음
+
 // 🔹공통🔹 for...of문 사용
 const defaultArr = [1, 2, 3];
 const defaultStr = 'hello';
@@ -141,3 +143,26 @@ console.log(setIterator2.next()); // { value: 10, done: false }
 console.log(setIterator2.next()); // { value: 20, done: false }
 console.log(setIterator2.next()); // { value: 30, done: false }
 console.log(setIterator2.next()); // { value: undefined, done: true }
+
+
+// 🔹 5. 제너레이터의 이터레이터 사용
+function* gen(): Generator<number> {
+    yield 100;
+    yield 200;
+    yield 300;
+}
+
+const generator = gen(); // Generator 객체 (이터러블이자 이터레이터)
+const generator2 = gen();
+
+for (const value of generator) {
+    console.log(value);
+    // 출력: 100
+    // 출력: 200
+    // 출력: 300
+}
+
+console.log(generator2.next()); // { value: 100, done: false }
+console.log(generator2.next()); // { value: 200, done: false }
+console.log(generator2.next()); // { value: 300, done: false }
+console.log(generator2.next()); // { value: undefined, done: true }
