@@ -1,4 +1,4 @@
-### 함수 오버로드 ( Function Overloading )
+### 함수 오버로딩 ( Function Overloading )
 
 - 함수 오버로드는 **JavaScript에서는 지원되지 않으며**, **TypeScript에서만** 사용할 수 있음
 
