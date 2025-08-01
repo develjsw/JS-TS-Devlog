@@ -21,8 +21,12 @@ for (const { hoCode, price } of rawApartmentPrices) {
 }
 
 const getAverage = (nums: number[]) => nums.reduce((acc, cur) => acc + cur, 0) / nums.length;
-const averagePriceByHoCode =
-    [...hoCodePriceMap.entries()].map(([hoCode, prices]) => ({ hoCode, averagePrice: getAverage(prices) }))
+const averagePriceByHoCode = [...hoCodePriceMap.entries()].map(
+    ([hoCode, prices]) => ({
+        hoCode,
+        averagePrice: getAverage(prices)
+    })
+);
 
 console.log(averagePriceByHoCode);
 // 결과
